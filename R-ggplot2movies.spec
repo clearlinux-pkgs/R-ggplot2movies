@@ -4,35 +4,35 @@
 #
 Name     : R-ggplot2movies
 Version  : 0.0.1
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/ggplot2movies_0.0.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/ggplot2movies_0.0.1.tar.gz
 Summary  : Movies Data
 Group    : Development/Tools
 License  : GPL-3.0
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-No detailed description available
+but has been moved its own package to reduce the download size of ggplot2.
 
 %prep
 %setup -q -c -n ggplot2movies
+cd %{_builddir}/ggplot2movies
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571837750
+export SOURCE_DATE_EPOCH=1589526908
 
 %install
-export SOURCE_DATE_EPOCH=1571837750
+export SOURCE_DATE_EPOCH=1589526908
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
